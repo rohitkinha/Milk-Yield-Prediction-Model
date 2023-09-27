@@ -1,0 +1,122 @@
+<%-include("header") -%>
+    <div>
+        <h1 class="text-center">
+            Milk Prediction Model
+        </h1>
+        <h3 class="text-center">
+            Extrinsic Factors
+        </h3>
+        <div>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <div class="form-container" style="background-color:rgb(164, 188, 146);">
+                        <form method="post">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="farmsize" class="form-label text-white" >Farm Size</label>
+                                    <input type="number" class="form-control" id="farmsize" name="farmsize" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="month" class="form-label text-white">Month</label>
+                                    <select class="form-select" id="month" name="month" required>
+                                        <option value="">Select Month</option>
+                                        <option value="Jan">Jan</option>
+                                        <option value="Feb">Feb</option>
+                                        <option value="March">March</option>
+                                        <option value="April">April</option>
+                                        <option value="May">May</option>
+                                        <option value="Jun">Jun</option>
+                                        <option value="July">July</option>
+                                        <option value="Aug">Aug</option>
+                                        <option value="Sep">Sep</option>
+                                        <option value="Oct">Oct</option>
+                                        <option value="Nov">Nov</option>
+                                        <option value="Dec">Dec</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="greenfodderamount" class="form-label text-white">Enter Green Fodder Amount (in Kg)</label>
+                                    <input type="number" class="form-control" id="greenfodderamount" name="greenfodderamount" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="dryfodderamount" class="form-label text-white">Enter Dry Fodder Amount (in Kg)</label>
+                                    <input type="number" class="form-control" id="dryfodderamount" name="dryfodderamount" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="maxT" class="form-label text-white">Enter the Max Temperature of the selected Month (°C)</label>
+                                    <input type="number" class="form-control" id="maxT" name="maxT" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="minT" class="form-label text-white">Enter the Min Temperature of the selected Month (°C)</label>
+                                    <input type="number" class="form-control" id="minT" name="minT" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="meanT" class="form-label text-white">Enter the Mean Temperature of the selected Month (°C)</label>
+                                    <input type="number" class="form-control" id="meanT" name="meanT" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="RH" class="form-label text-white">Enter the relative humidity (RH) of the selected Month</label>
+                                    <input type="number" class="form-control" id="RH" name="RH" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="rainfall" class="form-label text-white">Enter the overall rainfall (in mm) of the selected Month</label>
+                                    <input type="number" class="form-control" id="rainfall" name="rainfall" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="THI" class="form-label text-white">Enter the THI of the selected Month</label>
+                                    <input type="number" class="form-control" id="THI" name="THI" required>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <label for="district" class="form-label text-white">District</label>
+                                    <select class="form-select" id="district" name="district" required>
+                                        <option value="">Select District</option>
+                                        <option value="Sangrur">Sangrur</option>
+                                        <option value="Gurdaspur">Gurdaspur</option>
+                                        <option value="Hoshiarpur">Hoshiarpur</option>
+                                        <option value="Mukatsar">Mukatsar</option>
+                                        <option value="Ludhiana">Ludhiana</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <label for="zone" class="form-label text-white">Zone</label>
+                                    <select class="form-select" id="zone" name="zone" required>
+                                        <option value="">Select Zone</option>
+                                        <option value="Central">Central</option>
+                                        <option value="South Western">South Western</option>
+                                        <option value="Sub Mountanious">Sub Mountanious</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <label for="greenfoddertype" class="form-label text-white">Select the Green Fodder Type</label>
+                                    <select class="form-select" id="greenfoddertype" name="greenfoddertype" required>
+                                        <option value="">Select Green Fodder</option>
+                                        <option value="Barseem">Barseem</option>
+                                        <option value="Bajra">Bajra</option>
+                                        <option value="chari">chari</option>
+                                        <option value="jawar">jawar</option>
+                                        <option value="maize">maize</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <label for="dryfoddertype" class="form-label text-white">Select the Dry Fodder Type</label>
+                                    <select class="form-select" id="dryfoddertype" name="dryfoddertype" required>
+                                        <option value="">Select Dry Fodder</option>
+                                        <option value="Wheat Straw">Wheat Straw</option>
+                                        <option value="Paddy Straw">Paddy Straw</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <%-include("footer") -%>
